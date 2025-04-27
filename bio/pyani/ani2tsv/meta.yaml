@@ -1,0 +1,43 @@
+name: pyani
+url: https://github.com/widdowquinn/pyani
+description: Application and Python module for whole-genome classification of microbes using Average Nucleotide Identity.
+authors:
+  - Aoran Hu
+input:
+  - genomes: |
+      can be: genome folder or a file
+
+      as a file, can be:
+        genome path list or genomeid[tab]genomeprefix table
+
+        use "#" at the start of a line to comment out the line.
+
+        as list, the basename of the genome will be used as the genomeid,
+          so should be unique.
+
+        as table, format is:
+          a tsv with two columns witout header,
+          column 1: genomeid, column 2: genome prefix.
+output:
+  - tsv: |
+      Optional output tsv file.
+
+      a long table of each pair of genomes, ANI, alignment length, etc.
+  - pyanidb: Optional Path pyani database.
+  - report: Optional Path to pyani report folder. The output will be send to tsv if specfied.
+  - outdir: Optional Path to pyani output directory. contains pyanidb and report if those output not set.
+params:
+  - tsv: Optional output tsv file. can also set here
+  - pyanidb: Optional Path pyani database. can also set here
+  - report: Optional Path to pyani report folder. can also set here
+  - outdir: Optional Path to pyani output directory. can also set here
+  - suffix: |
+      Optional set of avail suffixes
+      Default: .fna, .fa, .fasta, .fastq, .fq
+
+      If input genomes are in a folder, the suffixes will be used to filter the files in the folder.
+
+      if only one suffix is set, the suffix will be trimmed from all the genomes.
+      If not set, and the input genomes is a table, default suffix '.fa' will be add to the genome prefix.
+  - methods: |
+      pyani running methods: anim, anib, aniblastall, fastani

@@ -1,0 +1,11 @@
+rule pyani:
+    input:
+        genomes="genomes/",
+    output:
+        tsv="pyani.tsv",
+    params:
+        pyanidb="pyanidb",
+        outdir="outdir",
+    threads: 1
+    wrapper:
+        github(repo = "Hocnonsense/snakemake-wrappers", branch = "hwrn", path = "bio/pyani/ani2tsv")
