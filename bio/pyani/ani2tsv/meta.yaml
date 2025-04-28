@@ -27,6 +27,8 @@ output:
   - report: Optional Path to pyani report folder. The output will be send to tsv if specfied.
   - outdir: Optional Path to pyani output directory. contains pyanidb and report if those output not set.
 params:
+  - methods: |
+      pyani running methods: anim, anib, aniblastall, fastani
   - tsv: Optional output tsv file. can also set here
   - pyanidb: Optional Path pyani database. can also set here
   - report: Optional Path to pyani report folder. can also set here
@@ -39,5 +41,3 @@ params:
 
       if only one suffix is set, the suffix will be trimmed from all the genomes.
       If not set, and the input genomes is a table, default suffix '.fa' will be add to the genome prefix.
-  - methods: |
-      pyani running methods: anim, anib, aniblastall, fastani

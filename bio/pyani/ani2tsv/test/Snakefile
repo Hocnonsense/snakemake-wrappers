@@ -4,8 +4,9 @@ rule pyani:
     output:
         tsv="pyani.tsv",
     params:
+        method="anim",
         pyanidb="pyanidb",
         outdir="outdir",
     threads: 1
     wrapper:
-        github(repo = "Hocnonsense/snakemake-wrappers", branch = "hwrn", path = "bio/pyani/ani2tsv")
+        "https://github.com/Hocnonsense/snakemake-wrappers/raw/hwrn/bio/pyani/ani2tsv"

@@ -100,10 +100,11 @@ shell(
 
     pyani createdb --dbpath {pyanidb}
     pyani index -i {genomes_dir}
-    pyani {pyani_exec} --dbpath {pyanidb} -i {genomes_dir} -o {run_temp.name}
+    pyani {pyani_exec} --dbpath {pyanidb} -i {genomes_dir} -o {run_temp.name} \\
+        --workers {snakemake.threads}
 
-    pyani report --dbpath {pyanidb} -o {run_temp.name}/report \
-        --genomes \
+    pyani report --dbpath {pyanidb} -o {run_temp.name}/report \\
+        --genomes \\
         --run_matrices 1
     """,
 )
