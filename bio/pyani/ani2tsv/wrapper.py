@@ -92,7 +92,7 @@ folder_to_delete.append(run_temp)
 
 genomes_dir, extra_suffix = make_input_folder(Path(snakemake.input.genomes))
 pyanidb = f"{run_temp.name}/pyanidb"
-pyani_exec = snakemake.params.methods
+pyani_exec = snakemake.params.method
 
 shell(
     f"""
